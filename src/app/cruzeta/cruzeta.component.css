@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 15rem;
+  height: 15rem;
+  justify-content: space-between;
+  transform: rotate(45deg);
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
+  transform: rotate(-45deg);
+  color: red;
+}
+.row-1 {
+  display: flex;
+  justify-content: center;
+  height: auto;
+}
+
+.container-2 {
+  display: flex;
+  flex: 1;
+  height: 100%;
+
+  align-items: center;
+  justify-content: space-between;
+}
+.intern-gird {
+  flex: 1;
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 1fr;
+  margin: 0;
+  padding: 0;
+}
+
+.justify-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.alaing-end {
+  display: flex;
+  align-items: end;
+}
+
+.justifi-init {
+  display: flex;
+  align-items: baseline;
+}

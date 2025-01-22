@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="row-1">
+    <!--numero arriba-->
+    <p>{{ (primero + tercero)%10 }}</p>
+  </div>
+  <div class="container-2">
+    <div style="padding: 5px">
+      <p>{{ (primero + segundo)% 10 }}</p>
+    </div>
+
+    <!--conteneror de los numeros internos-->
+    <div class="intern-gird">
+      <div
+        class="justify-end alaing-end"
+        style="
+          border-right: solid 2px black;
+          border-bottom: solid 2px black;
+          padding: 10px;
+        "
+      >
+        <p>{{ primero }}</p>
+      </div>
+      <div
+        class="alaing-end"
+        style="
+          border-left: solid 2px black;
+          border-bottom: solid 2px black;
+          padding: 10px;
+        "
+      >
+        <p>{{ tercero }}</p>
+      </div>
+      <div
+        class="justify-end justifi-init"
+        style="
+          border-top: solid 2px black;
+          border-right: solid 2px black;
+          padding: 10px;
+        "
+      >
+        <p>{{ segundo }}</p>
+      </div>
+      <div
+        class="justifi-init"
+        style="
+          border-top: solid 2px black;
+          border-left: solid 2px black;
+          padding: 10px;
+        "
+      >
+        <p>{{ (segundo + tercero) % 10 }}</p>
+      </div>
+    </div>
+
+    <div style="padding: 5px">
+      <p>{{ (tercero + (((segundo + tercero) % 10) % 10)) % 10 }}</p>
+    </div>
+  </div>
+  <!--numero abajo-->
+  <div class="row-1">
+    <p>{{ (segundo + ((segundo + tercero) % 10)) % 10 }}</p>
+  </div>
+</div>
