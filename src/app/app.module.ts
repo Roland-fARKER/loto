@@ -10,16 +10,19 @@ import { CalendarModule } from 'primeng/calendar';
 import { FormsModule } from '@angular/forms';
 import { CruzetaComponent } from './cruzeta/cruzeta.component';
 import { FooterComponent } from './footer/footer.component';
+import { CaidasComponent } from './caidas/caidas.component';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 @NgModule({
-  declarations: [AppComponent, CruzetaComponent, FooterComponent],
+  declarations: [AppComponent, CruzetaComponent, FooterComponent, CaidasComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     ButtonModule,
     CalendarModule,
-    FormsModule
+    FormsModule,
+    InputNumberModule
   ],
   providers: [],
   bootstrap: [AppComponent],

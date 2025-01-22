@@ -26,7 +26,6 @@ export class AppComponent {
     const initialRow = (day + month + year).split('').map(Number);
     this.pyramid = [initialRow];
     this.generatePyramid(initialRow);
-    console.log( this.pyramid[7])
   }
 
   generatePyramid(row: number[]) {

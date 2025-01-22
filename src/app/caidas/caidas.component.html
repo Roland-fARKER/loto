@@ -1,0 +1,39 @@
+<h3 style="text-align: center">caída de un número</h3>
+
+<div style="display: flex; width: 100%; gap: 10px; justify-content: center">
+  <p-inputNumber
+    [(ngModel)]="numero"
+    inputId="minmax"
+    mode="decimal"
+    [min]="0"
+    [max]="99"
+  />
+
+  <p-button icon="fa-solid fa-check" (onClick)="calculate()"></p-button>
+</div>
+<div class="pyramid">
+  <div *ngFor="let row of caida" class="row">
+    <p
+      class="num"
+      *ngFor="let num of row; let i = index"
+      [class.alt-color]="row.length % 2 === 0 ? i % 2 !== 0 : i % 2 === 0"
+      [class.triangle]="
+        (row.length == 7 && i == 1) ||
+        (row.length == 6 && row.length - i > 4) ||
+        (row.length == 5 && i == 0)
+      "
+    >
+      {{ num }}
+    </p>
+  </div>
+</div>
+
+<div *ngIf="caida.length > 1">
+  <div style="display: flex; justify-content: center; width: 100%">
+    <app-cruzeta
+      [primero]="caida[1][0] % 10"
+      [segundo]="(caida[0][0] + caida[1][0]) % 10"
+      [tercero]="(caida[0][1] + caida[1][0]) % 10"
+    ></app-cruzeta>
+  </div>
+</div>
