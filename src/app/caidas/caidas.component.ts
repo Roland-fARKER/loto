@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-caidas',
   templateUrl: './caidas.component.html',
-  styleUrl: './caidas.component.css'
+  styleUrl: './caidas.component.css',
 })
 export class CaidasComponent {
   numero?: number;
@@ -22,21 +22,21 @@ export class CaidasComponent {
   }
 
   splitNumberMath(num: number): number[] {
-    const digits: number[] = [];
-    while (num > 0) {
-      digits.unshift(num % 10); // Extrae el último dígito
-      num = Math.floor(num / 10); // Reduce el número
+    if (num === null || num === undefined) {
+      return [0, 0]; // Manejo de valor nulo o indefinido
     }
-    return digits;
+
+    const strNum = num.toString().padStart(2, '0'); // Asegura al menos 2 dígitos
+    return strNum.slice(-2).split('').map(Number);
   }
 
-  calculate(){
-    if(!this.numero) return
+  calculate() {
+    if (this.numero === undefined || this.numero === null) {
+      this.numero = 0; // Asignar 0 si no hay entrada
+    }
 
     let initRow = this.splitNumberMath(this.numero);
-
-    this.caida = [initRow]
-    this.generatePyramid(initRow)
-    console.log(this.caida)
+    this.caida = [initRow];
+    this.generatePyramid(initRow);
   }
 }
